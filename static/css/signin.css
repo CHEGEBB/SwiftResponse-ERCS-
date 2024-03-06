@@ -197,14 +197,19 @@ p {
         overflow-x: hidden;
     }
     .container {
-        width: 320px;
-        margin: 0;
+        width: 300px;
+        margin-top: 50px;
         border-radius: 15px;
         height: 500px;
         margin-left: 10px;
     }
     .signin-content {
         flex-direction: column;
+    }
+    .external-signin{
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
     }
     .image-content img {
         width: 100%;
@@ -222,15 +227,15 @@ p {
         padding-right: 0;
     }
     .form-group {
-        width: 100%;
+        width: 350px;
     }
     label {
         display: block;
     }
     
-    input[type="email"],
+    input[type="text"],
     input[type="password"] {
-        width: 300px;
+        width: 280px;
         padding: 10px;
         border-radius: 5px;
         border: 1px solid transparent;
@@ -238,15 +243,16 @@ p {
     }
     
     button[type="submit"] {
-        width: 300px;
+        width: 280px;
         padding: 10px;
         border-radius: 5px;
         border: none;
         background-color: hsla(348, 83%, 47%, 1);
         color: white;
         cursor: pointer;
-        margin-left: 20px;
+        margin-left: 10px;
         margin-top: 30px;
+
     }
     
     button[type="submit"]:hover {
@@ -259,7 +265,7 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 100px;
+        gap: 60px;
         margin-top: 20px;
     }
     .external-signin img{

@@ -174,59 +174,43 @@ p {
         overflow-x: hidden;
     }
     .container {
-        width: 320px;
-        margin: 0 auto; /* Center horizontally */
+        width: 300px;
         border-radius: 15px;
-        height: 500px;
+        height: 300px;
+        margin-left: 40px;
     }
     .signin-content {
-        position: static; /* Reset positioning */
-        background-color: transparent; /* Reset background color */
-        padding: 0; /* Reset padding */
-        border-radius: 0; /* Reset border radius */
-        max-width: none; /* Reset max width */
+        flex-direction: column;
     }
     .forms {
         margin-left: 0;
-        width: 350px;
+        width: 300px;
     }
     .form-content {
         padding-right: 0;
+        width: 300px;
     }
     input[type="text"],
     input[type="password"] {
-        width: 300px;
+        width: 280px;
         padding: 10px;
         border-radius: 5px;
         border: 1px solid transparent;
         outline: none;
     }
     button[type="submit"] {
-        width: 300px;
+        width: 280px;
         padding: 10px;
         border-radius: 5px;
         border: none;
         background-color: hsla(348, 83%, 47%, 1);
         color: white;
         cursor: pointer;
-        margin-left: 20px;
-        margin-top: 30px;
+        margin-left: 10px;
+        /* margin-top: 30px; */
     }
     .nav {
         margin-left: 0;
-    }
-    .external-signin {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 100px;
-        margin-top: 20px;
-    }
-    .external-signin img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
     }
     .container h2 {
         text-align: center;

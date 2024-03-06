@@ -141,11 +141,12 @@ p {
 /* mobile design */
 @media (max-width: 768px) {
     .container {
-        width: 320px;
-        margin: 0;
+        width: 300px;
+        margin-top: 50px;
         border-radius: 15px;
         height: 500px;
         margin-left: 5px;
+
     }
     .signup-content {
         flex-direction: column;
@@ -166,7 +167,7 @@ p {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 300px;
+    width: 280px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -174,14 +175,14 @@ input[type="password"] {
 }
 
 button[type="submit"] {
-    width: 300px;
+    width: 280px;
     padding: 10px;
     border-radius: 5px;
     border: none;
     background-color: hsla(348, 83%, 47%, 1);
     color: white;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 button[type="submit"]:hover {
