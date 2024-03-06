@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Signup</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <style>
+        .error-message {
+            color: red;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+        }
+
+    </style>
 </head>
 <body>
     <div class="background-image">
@@ -17,6 +27,17 @@
                     <a href="{{ url_for('login') }}">SIGN IN</a>
                     <a href="{{ url_for('signup') }}" class="active">SIGN UP</a>
                 </div>
+                <div class="flash-messages">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% for category, message in messages %}
+                            {% if category == 'error' %}
+                                <div class="alert alert-danger error-message" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endwith %}
+                </div>
                 <form id="signupForm" method="post" action="{{ url_for('signup') }}">
                     <div class="forms">
                         <div class="form-group">
@@ -28,13 +49,15 @@
                             <input type="email" id="email" name="email" required placeholder="Enter your email address...">
                         </div>
                         <div class="form-group">
-                            <label for="password">Create Your password:</label>
-                            <input type="password" id="password" name="password" required placeholder="Choose a Secure password">
+                            <label for="password">Create Your Password:</label>
+                            <input type="password" id="password" name="password" required placeholder="Choose a Secure Password">
+                            <div id="password_feedback"></div>
                         </div>
                         <div class="form-group">
-                            <label for="confirmPassword">Confirm Your password:</label>
+                            <label for="confirmPassword">Confirm Your Password:</label>
                             <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm Your Password">
-                        </div>
+                            <div id="password_match_feedback"></div>
+                        </div>                                              
                         <div class="checkbox-group">
                             <input type="checkbox" id="agree" name="agree" required>
                             <label class="checkbox-label" for="agree">I agree to the <a href="#">terms and conditions</a></label>

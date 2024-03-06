@@ -37,7 +37,7 @@ body {
     margin: 50px auto;
     padding: 20px;
     border-radius: 10px;
-    height: 500px;
+    height: 580px;
     position: relative; /* Ensure stacking context for z-index */
     z-index: 1; /* Move the form above other content */
 }

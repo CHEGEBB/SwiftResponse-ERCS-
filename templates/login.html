@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Signin</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+  <style>
+  .error-message {
+    color: red;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+}
+  </style>
 </head>
 <body>
   <div class="background-image">
@@ -21,14 +30,16 @@
           </div>
           <!-- Flash messages -->
           <!-- Flash messages -->
-          {% with messages = get_flashed_messages(with_categories=true) %} {%
-          for category, message in messages %} {% if category == 'error' %}
-          <div class="alert alert-danger" role="alert">
-            <ul>
-              <li>{{ message }}</li>
-            </ul>
-          </div>
-          {% endif %} {% endfor %} {% endwith %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% for category, message in messages %}
+    {% if category == 'error' %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endif %}
+{% endfor %}
+{% endwith %}
+
 
           <h2>Sign in with</h2>
           <!-- Sign in with Google -->
