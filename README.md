@@ -1,6 +1,6 @@
 # SwiftResponse 🚀📊📱
 
-SwiftResponse is an innovative Emergency Response Coordination System (ERCS) designed to streamline emergency reporting and enhance coordination during crises. This project, developed by Brian Chege, is a second-year school project that has been deployed using two branches: main and backend. The backend runs locally by executing the `app.py` Flask backend, which utilizes an SQLite database.
+SwiftResponse is an innovative Emergency Response Coordination System (ERCS) designed to streamline emergency reporting and enhance coordination during crises.
 
 ## Project Overview📝🌍
 
@@ -20,6 +20,13 @@ The Emergency Response Coordination System (ERCS) is a comprehensive project des
 
 6. ![screenshit6](https://github.com/CHEGEBB/SwiftResponse/assets/123733116/b7819444-d8e9-4bcd-b41a-bda4949c67e4)
 
+## Technologies Used 🛠️
+
+- **Flask:** Python-based web framework used for developing the backend.
+- **Jinja:** Template engine for rendering HTML templates in Flask.
+- **HTML:** Markup language used for creating web pages.
+- **CSS:** Styling language used for enhancing the appearance of web pages.
+- **SQLite:** Relational database management system used for data storage.
 
 ## Features💻
 
