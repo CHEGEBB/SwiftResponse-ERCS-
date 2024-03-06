@@ -4,7 +4,6 @@ from functools import wraps
 from twilio.rest import Client
 from twilio.twiml.messaging_response import MessagingResponse
 import os
-from dotenv import load_dotenv
 
 
 account_sid = 'AC04b9fbed99856ccd7ad1fdffb334327e'
