@@ -23,24 +23,15 @@ The Emergency Response Coordination System (ERCS) is a comprehensive project des
 
 ## Features💻
 
-
 - **User Authentication:** Secure login system for users.
 - **Emergency Reporting:** Reporting system for various types of emergencies, including accidents, fires, medical emergencies, and security incidents.
 - **Contact Submission:** Allows users to submit their contact information for emergency communication.
 - **Admin Portal:** An admin dashboard for managing emergency reports, contacts, and general alerts.
 - **General Alerts:** System for broadcasting general alerts to users.
 - **Data Storage:** Utilizes an SQLite database for storing emergency reports, contacts, and general alerts.
-## Branch Information
-
-- **Main Branch:** Contains the main project files and documentation.
-- **Backend Branch:** Contains the backend codebase, including Flask, Jinja, HTML, and CSS files. If you're interested in exploring or contributing to the backend, switch to this branch first.
-
-## To switch to the backend branch, use the following command:
-
-```bash
-git checkout backend
-```
-
+- **Chatbot:** Integration of a chatbot for user interaction.
+- **SMS Sending:** Functionality for sending SMS notifications to users.
+- **Live Maps:** Integration of live maps for real-time tracking of emergencies.
 
 ## Installation💻
 
