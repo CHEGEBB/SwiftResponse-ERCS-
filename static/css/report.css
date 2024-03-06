@@ -1,0 +1,242 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;600;700&family=Ropa+Sans&display=swap');
+
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: hsla(180, 50%, 20%, 1);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {   
+    font-weight: 700;
+    font-family: 'Ropa Sans', sans-serif;
+    color: crimson;
+}
+
+p {
+    font-family: 'Jost', sans-serif;
+}
+
+/* Background video styles */
+.background {
+    background-color: #333;
+}
+.logo img {
+    width: 200px; 
+    height: 200px; 
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background: linear-gradient(to bottom, #FF5733, #FFB33D); /* Adjust colors as needed */
+}
+
+
+.background-video video {
+    min-width: 100%;
+    min-height: 100%;
+}
+header{
+    background-color: #333;
+    margin-top: 50px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 3; /* Ensure header appears above overlay */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Form container styles */
+.container1 {
+    position: relative;
+    z-index: 2; /* Ensure form container appears above overlay */
+    padding: 20px;
+    background-color: crimson; /* Semi-transparent background */
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Ropa Sans', sans-serif;
+    outline: none;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Ropa Sans', sans-serif;
+    outline: none;
+}
+
+/* Footer styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 3; /* Ensure footer appears above overlay */
+}
+footer{
+  justify-content: center;
+  align-items: center;
+  margin-left: 600px;
+
+}
+footer a{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-family: 'Jost', sans-serif;
+}
+footer a:hover{
+  color: crimson;
+  cursor: pointer;
+}
+/* Navigation styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    z-index: 3; /* Ensure navigation appears above overlay */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 24px;
+}
+
+/* Menu toggle styles */
+.menu-toggle {
+    display: none;
+}
+
+/* Navigation list styles */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Navigation item styles */
+.nav-item {
+    margin-right: 20px;
+}
+
+/* Navigation link styles */
+.nav-item a {
+    text-decoration: none;
+    color: white;
+}
+.scroll-to-top img {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container1 {
+    width: 375px;
+  }
+    .navbar {
+        padding: 10px;
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        background-color: red;
+    }
+    
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-item {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .nav-item a {
+        color: white;
+    }
+
+    .nav-item a:hover {
+        color: crimson;
+    }
+
+    .nav-list.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .scroll-to-top img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .container1 {
+        margin-top: 100px;
+    }
+    footer{
+      margin-left: 0;
+    }
+    footer a{
+      padding: 5px;
+    }
+    footer a:hover{
+      color: crimson;
+      cursor: pointer;
+    }
+
+}

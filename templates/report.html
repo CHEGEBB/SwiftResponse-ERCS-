@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Reporting System</title>
+  <!-- Add any additional CSS or libraries here -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+  <style>
+    /* Default style for the icon */
+    .fas.fa-bars {
+      display: none; /* Hide the icon by default */
+    }
+    
+    /* Media query for screens with a maximum width of 768px */
+    @media (max-width: 768px) {
+      .fas.fa-bars {
+        display: inline;
+        background-color: red;
+        width: 50px;
+        height: 50px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background>
+  <div class="container1">
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleNav()">
+            <!-- Custom hamburger icon -->
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-list" id="navList">
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo">
+    </div>
+    <h1>SwiftResponse Emergency Reporting System</h1>
+    <p>Report emergencies and seek assistance in a fast and efficient manner.</p>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Container 1: Emergency Reporting Section -->
+    <div class="container1">
+      <section class="emergency-reporting-section">
+        <h2>Emergency Reporting</h2>
+        <p>Welcome to Emergency Reporting. We're here to assist you in any emergency situation.</p>
+        <p>If you're experiencing an emergency, please fill out the form below:</p>
+        {% if message %}
+          <p style="color: red;" class="message">{{ message }}</p>
+        {% endif %}
+        <form name="emergency-report-form" id="emergency-report-form" action="{{ url_for('report') }}" method="POST">
+          <!-- Name Input -->
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <!-- Phone Number Input -->
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+          <!-- Location Input -->
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+          </div>
+          <!-- Incident Select -->
+          <div class="form-group">
+            <label for="incident">Incident:</label>
+            <select id="incident" name="incident" required>
+              <option value="" disabled selected>Select Incident</option>
+              <option value="fire">Fire</option>
+              <option value="security">Security</option>
+              <option value="accident">Accident</option>
+              <option value="medical">Medical</option>
+            </select>
+          </div>
+          <!-- Incident Details Input -->
+          <div class="form-group">
+            <label for="details">Incident Details:</label>
+            <textarea id="details" name="details" placeholder="Describe the incident" required></textarea>
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" name="submit">Submit Report</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Emergency Reporting System</p>
+
+    <div class="footer-links">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
+  </footer>
+   <!-- Scroll to top button -->
+   <div class="scroll-to-top">
+    <a href="#top"><img src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}" alt="Scroll to Top"></a>
+  </div>
+  </div>
+
+  <!-- Add any additional JavaScript files or scripts here -->
+  <script src="{{ url_for('static', filename='js/report.js') }}"></script>
+</body>
+</html>

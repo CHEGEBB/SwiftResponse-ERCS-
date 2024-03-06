@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+<style>
+  /* Default style for the icon */
+  .fas.fa-bars {
+    display: none; /* Hide the icon by default */
+  }
+  
+  /* Media query for screens with a maximum width of 768px */
+  @media (max-width: 768px) {
+    .fas.fa-bars {
+      display: inline; /* Display the icon when screen width is at most 768px */
+    }
+  }
+</style>
+<body>
+    <!-- Navigation Section -->
+<nav class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <!-- Custom hamburger icon -->
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-list" id="navList">
+      <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('general') }}">General Alerts</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
+          <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
+          <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
+          <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
+          <li><a href="{{ url_for('report') }}">Report Emergency</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
+      <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+  
+
+    <div class="video-container">
+        <div class="overlay"></div>
+        <video autoplay muted loop id="video-bg">
+            <source src="{{ url_for('static', filename='img/contact/video.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+</body>
+</html>
