@@ -13,15 +13,27 @@
         <style>
         /* Default style for the icon */
         .fas.fa-bars {
-          display: none; /* Hide the icon by default */
-        }
-        
-        /* Media query for screens with a maximum width of 768px */
-        @media (max-width: 768px) {
-          .fas.fa-bars {
-            display: inline; /* Display the icon when screen width is at most 768px */
-          }
-          .chatbot {
+  display: none; /* Hide the icon by default */
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .fas.fa-bars {
+    display: inline; /* Display the icon when screen width is at most 768px */
+    font-size: 52px; /* Increase icon size to 32px */
+    background-image: url('/static/img/phone/mdi--hamburger-open.svg'); /* Specify path to your custom icon */
+    background-size: contain; /* Ensure the icon fits inside the element */
+    padding: 10px; /* Adjust padding as needed to create space around the icon */
+    background-repeat: no-repeat; /* Prevent the icon from repeating */
+    
+    /* Use CSS filters to adjust the color */
+    filter: brightness(0) saturate(100%) invert(60%) sepia(5%) saturate(1154%) hue-rotate(360deg) brightness(99%) contrast(100%);
+  }
+
+}
+
+
+       .chatbot {
         position: fixed; /* Ensure the chatbot container stays in a fixed position */
         bottom: 60px; /* Adjust the distance from the bottom of the viewport */
         right: 20px; /* Adjust the distance from the right of the viewport */
