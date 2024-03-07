@@ -161,28 +161,26 @@ def login():
         password = request.form['password']
         
         if '@' not in email:
+            # If the provided input is a username
             username = email
-            user_name = User.query.filter_by(username=username).first()
-            user_password = User.query.filter_by(password=password).first()
+            # Query the database for a user with the provided username
+            user = User.query.filter_by(username=username).first()
+        else:
+            # If the provided input is an email
+            # Query the database for a user with the provided email
+            user = User.query.filter_by(email=email).first()
 
-            if user_name and user_password:
-                session['email'] = email
-                return redirect('/SwiftResponse')
-            return redirect('/')
-        user_email = User.query.filter_by(email=email).first()
-        user_password = User.query.filter_by(password=password).first()
-        flash('Invalid email or password!', 'error')
-        
-        
-
-        if user_email and user_password:
-            session['email'] = email
+        # Check if a user with the provided credentials exists
+        if user and user.password == password:
+            session['email'] = user.email  # Store user's email in session
             flash('Login successful!', 'success')
             return redirect('/SwiftResponse')
-
-        flash('Invalid email or password!', 'error')
-        return redirect('/')
+        else:
+            flash('Invalid email or password!', 'error')
+            return redirect('/')
+        
     return render_template('login.html')
+
 
 @app.route('/logout')
 def logout():
